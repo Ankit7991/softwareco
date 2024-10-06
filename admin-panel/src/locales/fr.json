@@ -1,0 +1,53 @@
+{
+    "login": {
+        "title": "Connexion",
+        "email": "E-mail",
+        "password": "Mot de passe",
+        "forgotPassword": "Mot de passe oublié?",
+        "loginButton": "Connexion",
+        "registerLink": "Vous n'avez pas de compte? Inscrivez-vous ici."
+    },
+    "register": {
+        "title": "S'inscrire",
+        "name": "Nom",
+        "email": "E-mail",
+        "password": "Mot de passe",
+        "confirmPassword": "Confirmer le Mot de Passe",
+        "registerButton": "S'inscrire"
+    },
+    "forgotPassword": {
+        "title": "Mot de Passe Oublié",
+        "email": "E-mail",
+        "sendButton": "Envoyer le Lien de Réinitialisation"
+    },
+    "dashboard": {
+        "title": "Tableau de Bord",
+        "welcome": "Bienvenue dans le Panneau d'Administration",
+        "overview": "Aperçu",
+        "charts": "Graphiques",
+        "statistics": "Statistiques"
+    },
+    "project": {
+        "title": "Projets",
+        "addProject": "Ajouter un Projet",
+        "editProject": "Modifier le Projet",
+        "deleteProject": "Supprimer le Projet",
+        "name": "Nom du Projet",
+        "description": "Description"
+    },
+    "estimation": {
+        "title": "Estimations",
+        "addEstimation": "Ajouter une Estimation",
+        "editEstimation": "Modifier l'Estimation",
+        "deleteEstimation": "Supprimer l'Estimation"
+    },
+    "item": {
+        "title": "Article",
+        "description": "Description",
+        "unit": "Unité",
+        "quantity": "Quantité",
+        "price": "Prix",
+        "margin": "Marge (%)",
+        "total": "Total"
+    }
+}

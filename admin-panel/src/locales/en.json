@@ -1,0 +1,53 @@
+{
+    "login": {
+        "title": "Login",
+        "email": "Email",
+        "password": "Password",
+        "forgotPassword": "Forgot Password?",
+        "loginButton": "Login",
+        "registerLink": "Don't have an account? Register here."
+    },
+    "register": {
+        "title": "Register",
+        "name": "Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "registerButton": "Register"
+    },
+    "forgotPassword": {
+        "title": "Forgot Password",
+        "email": "Email",
+        "sendButton": "Send Reset Link"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "welcome": "Welcome to the Admin Panel",
+        "overview": "Overview",
+        "charts": "Charts",
+        "statistics": "Statistics"
+    },
+    "project": {
+        "title": "Projects",
+        "addProject": "Add Project",
+        "editProject": "Edit Project",
+        "deleteProject": "Delete Project",
+        "name": "Project Name",
+        "description": "Description"
+    },
+    "estimation": {
+        "title": "Estimations",
+        "addEstimation": "Add Estimation",
+        "editEstimation": "Edit Estimation",
+        "deleteEstimation": "Delete Estimation"
+    },
+    "item": {
+        "title": "Item",
+        "description": "Description",
+        "unit": "Unit",
+        "quantity": "Quantity",
+        "price": "Price",
+        "margin": "Margin (%)",
+        "total": "Total"
+    }
+}
