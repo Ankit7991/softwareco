@@ -1,40 +1,3 @@
-// import React from 'react'
-// import { Header } from '../sections/Header'
-// import { Sidebar } from '../sections/Sidebar'
-// import { Outlet } from 'react-router-dom'
-// import { Box } from '@mui/material'
-// import Toolbar from '@mui/material/Toolbar'
-// import abc from '@toolpad'
-
-
-// const drawer_width = 250
-// export const DashboardOutlet = () => {
-//   return (
-//     <>
-//       {/* <div className="">
-//         <Sidebar />
-//         <div className="">
-//           <Header />
-//           <Outlet />
-//         </div>
-//       </div> */}
-//       <Box sx={{display: 'flex'}}>
-//         <Sidebar />
-//         <div>
-//           <h1>HI</h1>
-//           <Header />
-//           <Box>
-//             <Toolbar />
-//             <Outlet />
-//           </Box>
-//         </div>
-//       </Box>
-//     </>
-//   )
-// }
-
-
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -47,8 +10,10 @@ import LayersIcon from '@mui/icons-material/Layers';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import type { Router, Navigation } from '@toolpad/core';
-import { Navigate, Outlet } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 import { lightTheme } from '../../utils/theme';
+import { Button } from '@mui/material';
+import { HeaderItems } from '../sections/HeaderItems';
 
 const NAVIGATION: Navigation = [
   {
@@ -59,6 +24,7 @@ const NAVIGATION: Navigation = [
     segment: 'dashboard',
     title: 'Dashboard',
     icon: <DashboardIcon />,
+    pattern: '/dashboard',
   },
   {
     segment: 'projects',
@@ -66,19 +32,10 @@ const NAVIGATION: Navigation = [
     icon: <LayersIcon />,
     children: [
       {
-        segment: 'project/create',
-        title: 'Create Project',
-        icon: <DescriptionIcon />,
-      },
-      {
-        segment: 'project/view',
+        segment: 'view',
         title: 'View Projects',
         icon: <DescriptionIcon />,
-      },
-      {
-        segment: 'project/filter',
-        title: 'Filter Projects',
-        icon: <DescriptionIcon />,
+        pattern: '/projects/view',
       },
     ],
   },
@@ -90,38 +47,36 @@ const NAVIGATION: Navigation = [
     title: 'Estimation',
   },
   {
-    segment: 'estimation',
+    segment: 'estimations',
     title: 'Estimation',
     icon: <BarChartIcon />,
     children: [
       {
-        segment: 'estimation/create',
-        title: 'Create Estimation',
-        icon: <DescriptionIcon />,
-      },
-      {
-        segment: 'estimation/view',
+        segment: 'view',
         title: 'View Estimations',
         icon: <DescriptionIcon />,
-      },
-      {
-        segment: 'estimation/filter',
-        title: 'Filter Estimations',
-        icon: <DescriptionIcon />,
+        pattern: '/estimation/view', 
       },
     ],
   },
 ];
 
 
+
+
+
 export const DashboardOutlet = () => {
   const [pathname, setPathname] = React.useState('/dashboard');
+  const navigate = useNavigate();
 
   const router = React.useMemo<Router>(() => {
     return {
       pathname,
       searchParams: new URLSearchParams(),
-      navigate: (path) => setPathname(String(path)),
+      navigate: (path) => {
+        setPathname(String(path));
+        navigate(path);
+      },
     };
   }, [pathname]);
 
@@ -135,7 +90,9 @@ export const DashboardOutlet = () => {
         title: 'UKT PMS'
       }}
     >
-      <DashboardLayout>
+      <DashboardLayout slots={{
+        toolbarActions: HeaderItems
+      }}>
         <Outlet />
       </DashboardLayout>
     </AppProvider>
