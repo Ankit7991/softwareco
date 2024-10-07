@@ -5,7 +5,7 @@ interface LoginState {
 }
 
 const defaultState: LoginState = {
-    token: null
+    token: 'abc'
 }
 
 const authSlice = createSlice({

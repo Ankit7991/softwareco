@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Outlet, Route, Routes } from 'react-router-dom'
 import { Login } from '../../pages/auth/Login'
 import { Dashboard } from '../../pages/dashboard/Dashboard'
 import { Estimations } from '../../pages/dashboard/Estimations'
@@ -14,8 +14,8 @@ export const AppRoutes = () => {
         <DashboardOutlet />
       </ProtectedRoute>}>
         <Route path='dashboard' element={<Dashboard />} />
-        <Route path='estimations' element={<Estimations />} />
-        <Route path='projects' element={<Projects />} />
+        <Route path='estimations/view' element={<Estimations />} />
+        <Route path='projects/view' element={<Projects />} />
       </Route>
       <Route path='/login' element={<Login />} />
     </Routes>

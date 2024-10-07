@@ -3,7 +3,7 @@ import { persistReducer, persistStore, PersistConfig} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import authReducer from './slices/authSlice'
 
-const persistConfig: PersistConfig<any> = {
+const persistConfig = {
     key: 'root',
     version: 1,
     storage
