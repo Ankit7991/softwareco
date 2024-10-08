@@ -31,7 +31,7 @@ export function Login() {
           validationSchema={validationSchema}
           onSubmit={(values) => {
             dispatch(login('abc'));
-            navigate('/')
+            navigate('/dashboard')
           }}
         >
           {({ handleChange, handleBlur, values, errors, touched }) => (
